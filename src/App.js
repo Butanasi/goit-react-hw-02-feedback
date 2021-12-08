@@ -28,12 +28,13 @@ class App extends Component {
   render() {
     const { good, bad, neutral } = this.state;
     const total = this.countTotalFeedback();
+    const keys = Object.keys(this.state);
 
     return (
       <>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={['good', 'neutral', 'bad']}
+            options={keys}
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
